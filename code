@@ -1,0 +1,23 @@
+x = 
+y = 
+A = max(x, y)
+B = min(x, y)
+k_1 = 1
+k_2 = 0
+l_1 = 0
+l_2 = 1
+format_string="{:>9} {:>9} {:>9} {:>9}"
+print(format_string.format(0, A, k_1, l_1))
+print(format_string.format(0, B, k_2, l_2))
+while A % B != 0:
+  q = (A - A % B) / B
+  C = A - q * B
+  k_3 = k_1 - q * k_2
+  l_3 = l_1 - q * l_2
+  print(format_string.format(int(q), int(C), int(k_3), int(l_3)))
+  k_1 = k_2
+  k_2 = k_3
+  l_1 = l_2
+  l_2 = l_3
+  A = B
+  B = C
